@@ -20,7 +20,6 @@ struct Particle {
 class PF {
 protected:
     int particle_num, state_size;
-    bool is_initialized;
     double x_std, y_std;
     VectorXd real, state_u;
     std::vector<double> weights;
@@ -28,10 +27,9 @@ protected:
 
 
 public:
-    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
     std::vector<Particle> particles;
 
-    PF() : particle_num(0), is_initialized(false){}
+    PF() : particle_num(0){}
     ~PF() = default;
 
     void initialize(double x, double y, int particle_n, int state_n, double x_cov, double y_cov, double x_std, double y_std, double xr, double yr);

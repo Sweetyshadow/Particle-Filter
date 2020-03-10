@@ -36,7 +36,6 @@ void PF::initialize(double x, double y, int particle_n, int state_n, double x_co
         this->particles[i] = p;
     }
     real << xr, yr;
-    this->is_initialized = true;
 
 }
 
